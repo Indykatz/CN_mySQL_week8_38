@@ -14,7 +14,7 @@ node src/app.js --add --title "Alien" --actor "Sigourney Weaver"
 
 node src/app.js --list
 
-<!-- UPDATE --> - this is not
+<!-- UPDATE --> - this is not working ? but it was - why arent you working 
 
 node src/app.js --update "Fight Club" --actor "Edward Norton"
 node src/app.js --update --title "Fight Club" --actor "Brad Pitt"

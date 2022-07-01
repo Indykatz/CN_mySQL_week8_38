@@ -24,6 +24,7 @@ const app = async (yargsObj) => {
         { title: yargsObj.newTitle, actor: yargsObj.newActor },
         { where: { title: yargsObj.oldTitle } }
       );
+      // Update 1
     } else if (yargsObj.update) {
       const toEdit = { title: yargsObj.update };
       let update = {};
@@ -33,7 +34,7 @@ const app = async (yargsObj) => {
       if (yargsObj.actor) {
         update = { ...update, actor: yargsObj.actor };
       }
-
+      // Update 2
       await updateMovie2(toEdit, update);
       //delete entry from table
     } else if (yargsObj.delete) {
