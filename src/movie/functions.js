@@ -21,23 +21,24 @@ exports.listMovies = async () => {
   }
 };
 // U - Update 1
-exports.updateMovies = async (newTitle, oldTitle) => {
+exports.updateMovie = async (updateObj, movieObj) => {
   try {
-    const response = await Movie.update(newTitle, oldTitle);
-    console.log(response);
+    const updated = await Movie.update(updateObj, {
+      where: movieObj,
+    });
   } catch (error) {
     console.log(error);
   }
 };
 // U - Update 2
-exports.updateMovie2 = async (whereObj, updateObj) => {
-  try {
-    const response = await Movie.update(updateObj, { where: whereObj });
-    console.log(response);
-  } catch (error) {
-    console.log(error);
-  }
-};
+// exports.updateMovie2 = async (whereObj, updateObj) => {
+//   try {
+//     const response = await Movie.update(updateObj, { where: whereObj });
+//     console.log(response);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
 
 // D - Delete
 exports.deleteMovie = async (movieObj) => {

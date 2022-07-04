@@ -14,14 +14,12 @@ node src/app.js --add --title "Alien" --actor "Sigourney Weaver"
 
 node src/app.js --list
 
-<!-- UPDATE --> - this is not working ? but it was - why arent you working 
+<!-- UPDATE TWO UPDATES AVAILABLE - COMMENT ONE OUT AS BOTH US update() -->
+
+<!-- UPDATE  1 --> -
 
 node src/app.js --update "Fight Club" --actor "Edward Norton"
-node src/app.js --update --title "Fight Club" --actor "Brad Pitt"
-
-<!-- UPDATE 2 --> - this is currenty working
-
-node src/app.js --update --newActor "Edward Norton" --oldTitle "Fight Club"
+node src/app.js --update "Fight Club" --actor "Brad Pitt"
 
 <!-- DELETE -->
 

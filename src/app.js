@@ -4,8 +4,7 @@ const {
   addMovie,
   listMovies,
   deleteMovie,
-  updateMovies,
-  updateMovie2,
+  updateMovie,
 } = require("./movie/functions");
 
 const app = async (yargsObj) => {
@@ -20,22 +19,18 @@ const app = async (yargsObj) => {
       await listMovies();
       //update one entry in movie table
     } else if (yargsObj.update) {
-      await updateMovies(
-        { title: yargsObj.newTitle, actor: yargsObj.newActor },
-        { where: { title: yargsObj.oldTitle } }
-      );
-      // Update 1
-    } else if (yargsObj.update) {
-      const toEdit = { title: yargsObj.update };
-      let update = {};
+      const update = { title: yargsObj.update };
+      let edits = {};
+      // Check if the identifier exists, if yes add it to the changes object
       if (yargsObj.title) {
-        update = { ...update, title: yargsObj.title };
+        //using spread operator instead of object assign
+        edits = { ...edits, title: yargsObj.title };
       }
       if (yargsObj.actor) {
-        update = { ...update, actor: yargsObj.actor };
+        edits = { ...edits, actor: yargsObj.actor };
       }
-      // Update 2
-      await updateMovie2(toEdit, update);
+        await updateMovie(edits, update);
+
       //delete entry from table
     } else if (yargsObj.delete) {
       await deleteMovie({ title: yargsObj.title });
